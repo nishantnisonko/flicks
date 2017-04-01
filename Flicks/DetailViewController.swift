@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var infoView: UIView!
     
     var movie: NSDictionary!
     
@@ -25,6 +27,7 @@ class DetailViewController: UIViewController {
         
         titleLabel.text = title
         overviewLabel.text = overview
+        overviewLabel.sizeToFit()
         
         let baseurl = "https://image.tmdb.org/t/p/w500"
         if let posterPath = movie["poster_path"] as? String{
@@ -34,6 +37,7 @@ class DetailViewController: UIViewController {
             
         }
         
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y+infoView.frame.size.height)
 
     }
 
