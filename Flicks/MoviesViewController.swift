@@ -82,9 +82,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
-        
+//        cell.overviewLabel.sizeToFit()
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated:true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
