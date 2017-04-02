@@ -16,6 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nowPlayingNavigationController = storyboard.instantiateViewController(withIdentifier: "MoviesNavigationController") as! UINavigationController
+        let nowPlayingViewController = nowPlayingNavigationController.topViewController as! MoviesViewController
+        nowPlayingViewController.endPoint = "now_playing"
+        nowPlayingNavigationController.tabBarItem.title = "Now Playing"
+        nowPlayingNavigationController.tabBarItem.image = UIImage(named: "now_playing")
+
+        let topRatedNavigationController = storyboard.instantiateViewController(withIdentifier: "MoviesNavigationController") as! UINavigationController
+        let topRatedViewController = topRatedNavigationController.topViewController as! MoviesViewController
+        topRatedViewController.endPoint = "top_rated"
+        topRatedNavigationController.tabBarItem.title = "Top Rated"
+        topRatedNavigationController.tabBarItem.image = UIImage(named: "top_rated")
+
+        let upComingNavigationController = storyboard.instantiateViewController(withIdentifier: "MoviesNavigationController") as! UINavigationController
+        let upComingViewController = upComingNavigationController.topViewController as! MoviesViewController
+        upComingViewController.endPoint = "upcoming"
+        upComingNavigationController.tabBarItem.title = "Up Coming"
+        upComingNavigationController.tabBarItem.image = UIImage(named: "upcoming")
+
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [nowPlayingNavigationController, topRatedNavigationController, upComingNavigationController]
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
