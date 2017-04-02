@@ -33,6 +33,8 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 ![alt text](https://raw.githubusercontent.com/nishantnisonko/flicks/master/flicks.gif "Video Walkthrough")
+![alt text](https://raw.githubusercontent.com/nishantnisonko/flicks/master/Screen%20Shot%202017-04-01%20at%205.05.21%20PM.png "Error message")
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
